@@ -1,0 +1,8 @@
+settings.ini
+.notes
+testvenv
+dist
+*.kate-swap
+buildandtest.sh
+notes
+*.egg-info
