@@ -14,11 +14,11 @@ Kiyoi is a Python image viewer based on [Pyside6](https://wiki.qt.io/Qt_for_Pyth
 
 ## Windows
 
-1. Ensure you have python installed.
+1. Ensure you have python installed. It must be installed system-wide (not for a single user) and added to the path variable for Kiyoi to work properly.
 1. Run `pip install kiyoi_image_viewer`.
-1. To install menu entries and file associations, `run kiyoi_winreg_install` at the Window console (cmd) (or `python -m "kiyoi_winreg_install"`).
+1. To install menu entries and file associations, `run kiyoi_winreg_install` at the Window console (cmd) (or `python -m "kiyoi_winreg_install"`). You will be prompted for admin permissions.
     * To uninstall these, run `kiyoi_winreg_uninstall` at the Window console (or `python -m "kiyoi_winreg_uninstall"`).
-1. Default associations are not set automatically. If you want Kiyoi as a default for all images, Windows has an option in system settings under "default apps" to select a "photo viewer". Kiyoi is added to that list by kiyoi_winreg_install.
+1. Default associations are not set automatically. If you want Kiyoi as a default for all images, Windows has an option in system settings under "default apps" to select a "photo viewer". Kiyoi is added to that list by kiyoi_winreg_install. Otherwise, you can set associations individually via file properties.
 
 ## Linux
 
@@ -27,12 +27,24 @@ Kiyoi is a Python image viewer based on [Pyside6](https://wiki.qt.io/Qt_for_Pyth
 If your distro allows you to install Python packages directly with pip:
 
 1. Run `pip install kiyoi_image_viewer`.
-2. Get the `kiyoi.desktop file` (either out of the kiyoi_image_viewer site-packages folder in Python or more easily, download it from this repo)
-3. Run `desktop-file-install /PATH/TO/kiyoi.desktop` (using the real path to wherever that file is)
+1. Get the `kiyoi.desktop file` (either out of the kiyoi_image_viewer site-packages folder in Python or more easily, download it from this repo)
+1. Run `desktop-file-install /PATH/TO/kiyoi.desktop` (using the real path to wherever that file is)
 
 ### Managed Python
 
-TODO
+You may be able to use the above procedure with the --user flag to pip, `pip --user install kiyoi_image_viewer`. This does not currently work on Arch.
+
+For Arch and other systems that can use AUR PKGBUILD, use the PKGBUILD in the git/sourceforge repo. You only need to download that one file; it will pull the Pypi package itself.
+
+1. As root, make sure you have the required packages for building a python script as Arch requires: `pacman -S python-installer python-wheel`
+1. Download Kiyoi's PKGBUILD from git/sourceforge.
+1. Place the PKGBUILD in a directory and open a console there.
+1. Run `makepkg`
+1. If there are no errors, you can install the package archive makepkg created with `pacman -U packagenamehere` run as root.
+1. You should be able to start Kiyoi via `kiyoi_image_viewer` on the console or via the start menu.
+1. If Kiyoi doesn't appear in the file associations/start menu, try running `update-desktop-database`.
+
+For other systems, currently I can only advise to consult your distribution's documentation on how to install unsupported python scripts. You may be able to use a virtual environment, but you will need to modify the .desktop file before installing it.
 
 # Use
 

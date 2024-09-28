@@ -48,7 +48,7 @@ kiyoi_image_viewer = "kiyoi_image_viewer:kiyoi_run"
 
 [project.urls]
 Github = "https://github.com/WilliamKappler/kiyoi/"
-Sourceforge = "https://sourceforge.net/projects/kiyoi/"
+Sourceforge = "https://sourceforge.net/projects/kiyoi-image-viewer/"
 
 [tool.setuptools.package-data]
 kiyoi_image_viewer = ["lang.template", "*.lang", "*.syn", "*.png", "kiyoi.svg"]
