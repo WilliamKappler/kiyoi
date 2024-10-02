@@ -1,7 +1,7 @@
 pkgname='python-kiyoi-image-viewer'
 _module='kiyoi-image-viewer'
-_src_folder='kiyoi_image_viewer-0.1.1'
-pkgver='0.1.1'
+_src_folder='kiyoi_image_viewer-0.1.2'
+pkgver='0.1.2'
 pkgrel=1
 pkgdesc="Python image viewer based on Pyside6 and Pillow"
 url="https://pypi.org/project/kiyoi-image-viewer/"
@@ -9,8 +9,8 @@ depends=('python' 'pyside6' 'python-pyperclip' 'python-pillow' 'xsel')
 makedepends=('python-build' 'python-installer' 'python-wheel')
 license=('custom:ISC License (ISCL)')
 arch=('any')
-source=("https://files.pythonhosted.org/packages/b3/0e/0bff51fcab5562021d9faf385ee535bd0b7ff60daf78ce15e3bd16d030e2/kiyoi_image_viewer-0.1.1.tar.gz")
-sha256sums=('b63129e97c44daf62976dff7ba9ca858961648b498b3bc945df291f53b513c84')
+source=("https://files.pythonhosted.org/packages/2d/65/5fca8f8e8b2fca9fee6921bf491f63c0e1eade0ec3fff3c25c078c6be382/kiyoi_image_viewer-0.1.2.tar.gz")
+sha256sums=('5379bfde3c12b62fa425d068bb6f464dfce736e135e825da9568836ab22370e0')
 
 build() {
     cd "${srcdir}/${_src_folder}"
